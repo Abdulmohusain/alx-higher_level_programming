@@ -1,3 +1,5 @@
 #!/usr/bin/python3
-def new_in_list(my_list, idx, element):
-    
+def delete_at(my_list=[], idx=0):
+    if type(my_list) is list or idx < len(list):
+        del (my_list[idx])
+    return my_list
