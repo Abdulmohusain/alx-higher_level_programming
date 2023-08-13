@@ -8,4 +8,4 @@ if __name__ == "__main__":
     else:
         print("{} arguments:".format(len(sy.argv)))
     for i in sy.argv[1:]:
-        print("{}: {}".format(sy.argv.index(i), i))
+        print("{:d}: {}".format(sy.argv.index(i), i))
