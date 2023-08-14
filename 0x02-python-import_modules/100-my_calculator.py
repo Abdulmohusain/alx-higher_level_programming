@@ -22,4 +22,3 @@ if __name__ == "__main__":
         print("{:d}".format(cal.mul(a, b)))
     if o == "/":
         print("{:d}".format(cal.div(a, b)))
-    exit(1)
