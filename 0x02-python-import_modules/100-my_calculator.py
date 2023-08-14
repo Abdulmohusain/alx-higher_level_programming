@@ -5,7 +5,7 @@ if __name__ == "__main__":
 
     arg = sys.argv
     if len(arg) != 4:
-        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
+        print("Usage: {} <a> <operator> <b>".format(arg[0]))
         exit(1)
     op_list = ["+", "-", "*", "/"]
     a = int(arg[1])
@@ -22,4 +22,3 @@ if __name__ == "__main__":
         print("{:d}".format(cal.mul(a, b)))
     if o == "/":
         print("{:d}".format(cal.div(a, b)))
-    exit(1)
