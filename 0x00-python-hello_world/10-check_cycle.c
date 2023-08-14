@@ -8,6 +8,8 @@ int check_cycle(listint_t *list)
 {
 	listint_t *start = list;
 
+	if (list == NULL)
+		return (0);
 	list = list->next;
 	while (list)
 	{
