@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    import sys
+    import sy as sys
     import calculator_1 as cal
 
-    arg = sys.argv
+    arg = sy.argv
     if len(arg) != 4:
-        print("Usage: {} <a> <operator> <b>".format(arg[0]))
+        print("Usage: {:s} <a> <operator> <b>".format(arg[0]))
         exit(1)
     op_list = ["+", "-", "*", "/"]
     a = int(arg[1])
