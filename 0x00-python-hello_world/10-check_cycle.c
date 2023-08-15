@@ -6,15 +6,25 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *start = list;
+	listint_t *arr[1024];
+	int i;
 
 	if (list == NULL)
 		return (0);
+	arr[0] = list;
+	arr[1] = NULL;
 	list = list->next;
 	while (list)
 	{
-		if (list == start)
-			return (1);
+		i = 0;
+		while (arr[i])
+		{
+			if (list == arr[i])
+				return (1);
+			i++;
+		}
+		arr[i] = list;
+		arr[i + 1] = NULL;
 		list = list->next;
 	}
 	return (0);
