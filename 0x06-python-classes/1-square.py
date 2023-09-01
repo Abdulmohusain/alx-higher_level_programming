@@ -10,3 +10,4 @@ class Square:
          Args:
             __size (int): Description of `param1`.
         """
+        self.__size = size
