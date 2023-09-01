@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""this module describes a class square"""
+
+
 class Square:
     """this module describes a class square"""
 
@@ -7,9 +10,3 @@ class Square:
          Args:
             __size (int): Description of `param1`.
         """
-
-        self.__size = size
-    def set_size(self, size):
-        self.__size = size
-    def set_size(self):
-        return self.__size
