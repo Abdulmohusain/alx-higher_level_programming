@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/python3
 class Square:
     """this module describes a class square"""
 
