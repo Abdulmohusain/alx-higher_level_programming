@@ -9,3 +9,7 @@ class Square:
         """
 
         self.__size = size
+    def set_size(self, size):
+        self.__size = size
+    def set_size(self):
+        return self.__size
