@@ -34,6 +34,10 @@ class Rectangle:
         """returns “official” string representation of an object."""
         return 'Rectangle({}, {})'.format(self.__width, self.__height)
 
+    def __del__(self):
+        """Detect Instance deletion"""
+        print("Bye rectangle...")
+
     @property
     def width(self):
         """Return private instance attribute width"""
