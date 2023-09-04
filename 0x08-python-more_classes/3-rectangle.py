@@ -6,7 +6,13 @@ class Rectangle:
     """Creates a rectangle class"""
 
     def __init__(self, width=0, height=0):
-        """Initializes the class"""
+        """Initializes the class
+
+        Args:
+            width (int): width
+            height (int): height
+        """
+
         if type(width) is not int:
             raise TypeError("width must be an integer")
         if width < 0:
