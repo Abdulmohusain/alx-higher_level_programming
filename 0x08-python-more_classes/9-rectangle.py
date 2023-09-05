@@ -104,4 +104,4 @@ class Rectangle:
         if size < 0:
             del self
             raise ValueError("width must be >= 0")
-        return cls(size, size)
+        return Rectangle(size, size)
