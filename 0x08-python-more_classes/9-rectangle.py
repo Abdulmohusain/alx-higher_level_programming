@@ -100,10 +100,4 @@ class Rectangle:
     @classmethod
     def square(cls, size=0):
         """return a rectangle"""
-        if type(size) is not int:
-            del self
-            raise TypeError("width must be an integer")
-        if size < 0:
-            del self
-            raise ValueError("width must be >= 0")
         return Rectangle(size, size)
