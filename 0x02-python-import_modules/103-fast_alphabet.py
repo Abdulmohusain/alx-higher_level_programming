@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-import alpha
+if __name__ == "__main__":
+    import alpha
