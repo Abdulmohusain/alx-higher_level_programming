@@ -6,18 +6,17 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *start = list;
+	listint_t *rabbit = list, *turtle = list;
 
-	if (list == NULL)
-		return (0);
-	if (list->next == start)
+	if (!list)
 		return (1);
-	list = list->next;
-	while (list)
+	while (rabbit != NULL || turtle != NULL || rabbit->next != NULL)
 	{
-		if (list == start)
+		rabbit = rabbit->next;
+		turtle = turtle->next;
+		if (rabbit == turtle)
 			return (1);
-		list = list->next;
 	}
 	return (0);
+
 }
