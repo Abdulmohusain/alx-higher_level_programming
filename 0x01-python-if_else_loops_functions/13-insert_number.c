@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdio.h>
 /**
  * insert_node - function in C that inserts a number
  * into a sorted singly linked list.
@@ -29,18 +30,19 @@ listint_t *insert_node(listint_t **head, int number)
 	}
 	list = *head;
 	prev = *head;
-	while (list->next)
+	list = list->next;
+	while (list)
 	{
 		if (number <= list->n)
 		{
-			prev = new;
+			prev->next = new;
 			new->next = list;
 			return (new);
 		}
 		prev = list;
 		list = list->next;
 	}
-	list->next = new;
+	prev->next = new;
 	new->next = NULL;
 	return (new);
 }
