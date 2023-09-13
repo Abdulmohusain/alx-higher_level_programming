@@ -1,6 +1,5 @@
-
 #!/usr/bin/python3
-"""Multiply"""
+"""function that deletes a key in a dictionary."""
 
 
 def multiply_by_2(a_dictionary):
