@@ -4,6 +4,7 @@
 
 def search_replace(my_list, search, replace):
     """Search replace"""
+
     if type(my_list) is not list:
         return
     list_copy = my_list[:]
@@ -11,5 +12,4 @@ def search_replace(my_list, search, replace):
         if j == search:
             list_copy.remove(j)
             list_copy.insert(i, replace)
-            return list_copy
     return list_copy
