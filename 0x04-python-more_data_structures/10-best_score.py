@@ -7,6 +7,8 @@ def best_score(a_dictionary):
 
     if type(a_dictionary) is not dict:
         return
+    if len(a_dictionary) == 0:
+        return
     new = a_dictionary.copy()
     for key, value in new.items():
         largest = value
