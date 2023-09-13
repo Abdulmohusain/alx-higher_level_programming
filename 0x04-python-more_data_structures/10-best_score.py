@@ -10,6 +10,7 @@ def best_score(a_dictionary):
     new = a_dictionary.copy()
     for key, value in new.items():
         largest = value
+        largest_key = key
         break
     for key, value in new.items():
         if value > largest:
