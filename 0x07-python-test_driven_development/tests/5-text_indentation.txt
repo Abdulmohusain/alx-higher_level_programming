@@ -1,0 +1,33 @@
+Test file for text_indentation function
+
+    >>> text_indentation = __import__("5-text_indentation").text_indentation
+
+Test for type error
+    >>> text_indentation([])
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation(" werttyyyuu.")
+    werttyyyuu
+
+    >>> text_indentation("werttyyyuu.fghjkkkjj")
+    werttyyyuu
+
+    fghjkkkjj>>> 
+    
+    >>> text_indentation("werttyyyuu")
+    werttyyyuu>>>
+
+    >>> text_indentation("wert:tyyyuu.fghjkk?kjj")
+    wert
+
+    tyyyuu
+
+    fghjkk
+
+    kjj>>> 
+
+    >>> text_indentation()
+    Traceback (most recent call last):
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
