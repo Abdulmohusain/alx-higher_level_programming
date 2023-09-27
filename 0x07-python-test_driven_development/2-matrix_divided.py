@@ -35,3 +35,6 @@ def matrix_divided(matrix, div):
             if type(num) is not int and type(num) is not float:
                 raise TypeError("matrix must be a matrix (list of lists)\
                     of integers/floats")
+        return list(map(
+            lambda x: list(map(
+                lambda y: round(y / 3, 2), x)), matrix))
