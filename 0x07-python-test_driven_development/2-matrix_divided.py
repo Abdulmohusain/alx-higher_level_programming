@@ -35,7 +35,10 @@ def matrix_divided(matrix, div):
             if type(num) is not int and type(num) is not float:
                 raise TypeError("matrix must be a matrix (list of lists)\
                     of integers/floats")
-        new = matrix[:]
-        return list(map(
-            lambda x: list(map(
-                lambda y: round(y / 3, 2), x)), new))
+        new = []
+        for lis in matrix:
+            a = []
+            for num in lis:
+                a.append(round(num/div, 2))
+            new.append(a)
+        return new
