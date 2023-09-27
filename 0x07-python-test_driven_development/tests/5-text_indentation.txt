@@ -9,23 +9,23 @@ Test for type error
 
     >>> text_indentation(" werttyyyuu.")
     werttyyyuu
-
+    <BLANKLINE>
     >>> text_indentation("werttyyyuu.fghjkkkjj")
     werttyyyuu
+    <BLANKLINE>
+    fghjkkkjj
 
-    fghjkkkjj>>> 
-    
     >>> text_indentation("werttyyyuu")
-    werttyyyuu>>>
+    werttyyyuu
 
     >>> text_indentation("wert:tyyyuu.fghjkk?kjj")
     wert
-
+    <BLANKLINE>
     tyyyuu
-
+    <BLANKLINE>
     fghjkk
-
-    kjj>>> 
+    <BLANKLINE>
+    kjj
 
     >>> text_indentation()
     Traceback (most recent call last):
