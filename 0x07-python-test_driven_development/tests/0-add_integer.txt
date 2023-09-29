@@ -1,0 +1,36 @@
+This is a test for add_integer() function
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+
+Tests for integers and floats
+
+    >>> add_integer(2, 3)
+    5
+    >>> add_integer(2, 3.3)
+    5
+    >>> add_integer(2.8, 3.3)
+    5
+    >>> add_integer(-2, 8)
+    6
+    >>> add_integer(-2, 7)
+    5
+    >>> add_integer(-2.5, 7.6)
+    5
+    >>> add_integer(-2.5)
+    96
+    >>> add_integer(2)
+    100
+
+Test for exception
+    >>> add_integer()
+    Traceback (most recent call last):
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+    >>> add_integer("45", 76)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer(45, "76")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
