@@ -2,7 +2,11 @@
 
 
 def add_integer(a, b=98):
-    """A function that adds two integer"""
+    """A function that adds two integer
+    Args:
+        a (int or float): num 1
+        b (int or float): num 2
+    """
 
     if type(a) is not int and type(a) is not float:
         raise TypeError("a must be an integer")

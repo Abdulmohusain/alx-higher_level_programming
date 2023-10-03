@@ -1,0 +1,48 @@
+This is a test file for matrix_divided();
+    A function that divides all element of matrix by n number
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Test for type and zero division TypeError
+
+    >>> matrix = [
+    ... [1, 2, 3],
+    ... [4, 5, 6]
+    ... ]
+
+    >>> matrix_divided(matrix, 0)
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
+
+    >>> matrix_divided("mat", 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix = [
+    ... [1, [3], 3],
+    ... [4, 5, 6]
+    ... ]
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix = [
+    ... [1, 2],
+    ... [4, 5, 6]
+    ... ]
+    
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+
+   
+
+    >>> matrix = [
+    ... [1.5, 2, 3.5],
+    ... [4.5, 5, 6.5]
+    ... ]
+    >>> matrix_divided(matrix, 3)
+    [[0.5, 0.67, 1.17], [1.5, 1.67, 2.17]]
+
+
+    
