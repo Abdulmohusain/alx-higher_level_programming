@@ -13,7 +13,6 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         """Instance attributes"""
 
-        number_of_instances += 1
         # Validate width
         if type(width) is not int:
             raise TypeError("width must be an integer")
@@ -29,6 +28,7 @@ class Rectangle:
         # set width and height
         self.__width = width
         self.__height = height
+        self.__class__.number_of_instances += 1
 
     def __str__(self):
         """ return a nicely printable reprrsentation of the object"""
@@ -52,7 +52,7 @@ class Rectangle:
 
     def __del__(self):
         print("Bye rectangle...")
-        number_of_instances -= 1
+        self.__class__.number_of_instances -= 1
 
     @property
     def width(self):
