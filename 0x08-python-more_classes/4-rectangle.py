@@ -37,11 +37,12 @@ class Rectangle:
             for i in range(self.__height):
                 for j in range(self.__width):
                     nice_string += "#"
-                nice_string += "\n"
+                if i < self.__height - 1:
+                    nice_string += "\n"
         return nice_string
 
     def __repr__(self):
-        """ return a string representation of the
+        """return a string representation of the
          rectangle to be able to recreate a new
         instance by using eval()
         """

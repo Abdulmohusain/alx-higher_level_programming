@@ -37,7 +37,8 @@ class Rectangle:
             for i in range(self.__height):
                 for j in range(self.__width):
                     nice_string += "#"
-                nice_string += "\n"
+                if i < self.__height - 1:
+                    nice_string += "\n"
         return nice_string
 
     @property
