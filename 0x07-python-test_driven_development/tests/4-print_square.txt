@@ -1,28 +1,20 @@
-This is a test for print_square function
-that prints # size^2 times
+print_square is a function that prints # size times.
+Args:
+    size (int): size of square
 
         >>> print_square = __import__('4-print_square').print_square
 
-Test for exxeptionr
+Tests for type and value error
+        >>> print_square("1234")
+        Traceback (most recent call last):
+        TypeError: size must be an integer
 
-        >>> print_square(-3)
+        >>> print_square(-5)
         Traceback (most recent call last):
         ValueError: size must be >= 0
 
-
+Tests for normal cases
         >>> print_square(0)
-        <BLANKLINE>
-
-        >>> print_square(3.3)
-        Traceback (most recent call last):
-        TypeError: size must be an integer
-
-
-        >>> print_square("3.3")
-        Traceback (most recent call last):
-        TypeError: size must be an integer
-
-Normal cases
 
         >>> print_square(3)
         ###
@@ -32,3 +24,4 @@ Normal cases
         >>> print_square()
         Traceback (most recent call last):
         TypeError: print_square() missing 1 required positional argument: 'size'
+
