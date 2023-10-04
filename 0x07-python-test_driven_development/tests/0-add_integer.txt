@@ -22,8 +22,12 @@ Test for positive and ngative integers
 	>>> add_integer(1, 2.9)
 	3
 	>>> add_integer(float("nan"), 2.9)
+	Traceback (most recent call last):
+	ValueError: cannot convert float NaN to integer
 
 	>>> add_integer(1, float('inf'))
+	Traceback (most recent call last):
+	OverflowError: cannot convert float infinity to integer
 
 Test for other data types
 	
