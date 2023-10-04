@@ -44,6 +44,6 @@ Test for other data types
 	>>> add_integer(2)
 	100
 
-	>>> add_integer("asd", 3)
+	>>> add_integer()
 	Traceback (most recent call last):
 	TypeError: add_integer() missing 1 required positional argument: 'a'
