@@ -21,6 +21,9 @@ Test for positive and ngative integers
 	1
 	>>> add_integer(1, 2.9)
 	3
+	>>> add_integer(float("nan"), 2.9)
+
+	>>> add_integer(1, float('inf'))
 
 Test for other data types
 	
