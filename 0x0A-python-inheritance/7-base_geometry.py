@@ -17,4 +17,4 @@ class BaseGeometry:
             raise TypeError("{:s} must be an integer".format(self.name))
         if self.value <= 0:
             raise ValueError("{:s} must be greater than 0".format(self.name))
-        return self.value
+
