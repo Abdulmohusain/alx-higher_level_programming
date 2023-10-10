@@ -35,3 +35,5 @@ This is a test for BasGeometry Function
     TypeError: width must be an integer
 
     >>> base.integer_validator([], 23)
+    Traceback (most recent call last):
+    TypeError: [] must be str
