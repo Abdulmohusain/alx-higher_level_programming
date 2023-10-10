@@ -13,7 +13,7 @@ class Square(Rectangle):
 
     def __str__(self):
         """Return a nice printable format of object"""
-        return "[{}] {}/{}".format("Square", self.__size, self.__size)
+        return "[{}] {}/{}".format("Rectangle", self.__size, self.__size)
 
     def area(self):
         """computes the area"""
