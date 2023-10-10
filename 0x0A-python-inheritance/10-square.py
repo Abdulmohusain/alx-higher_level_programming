@@ -4,11 +4,13 @@ BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Square(BaseGeometry):
-    """this defines Rectangle class that inherits from BaseGeometry"""
-    def __init__(self, width, height):
+    """this defines Square class that inherits from BaseGeometry"""
+    def __init__(self, size):
         """The initialization method"""
 
-        self.integer_validator("width", width)
-        self.__width = width
-        self.integer_validator("height", height)
-        self.__height = height
+        self.integer_validator("size", size)
+        self.__size = size
+    
+    def area(self):
+        """computes the area"""
+        return self.__width * self.__height
