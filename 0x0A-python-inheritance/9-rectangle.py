@@ -15,7 +15,7 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         """Return a nice printable format of object"""
-        return "[{}] {}/{}".format(type(self.__class__),
+        return "[{}] {}/{}".format("Rectangle",
                                    self.__width, self.__height)
 
     def area(self):
