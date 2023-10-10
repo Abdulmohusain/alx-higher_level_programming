@@ -13,4 +13,4 @@ class Square(BaseGeometry):
 
     def area(self):
         """computes the area"""
-        return self.__width * self.__height
+        return self.__size ^ 2
