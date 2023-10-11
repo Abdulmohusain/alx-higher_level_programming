@@ -9,9 +9,4 @@ def class_to_json(obj):
     Args:
         obj (object): is an instance of a Class
     """
-    name, number = str(obj).replace("[MyClass] ", '').replace("-", "").split()
-
-    new_dict = {}
-    new_dict["name"] = name
-    new_dict["number"] = number
-    return new_dict
+    return obj.__dict__
