@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """this module contains from_json_string function"""
-import json
 
 
 def class_to_json(obj):
@@ -15,4 +14,4 @@ def class_to_json(obj):
     new_dict = {}
     new_dict["name"] = name
     new_dict["number"] = number
-    return json.dumps(new_dict)
+    return new_dict
