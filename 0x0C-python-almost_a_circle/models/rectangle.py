@@ -47,7 +47,7 @@ class Rectangle(Base):
             raise TypeError("{:s} must be an integer".format(name))
         if name == "x" or name == "y":
             if value < 0:
-                raise ValueError("{:s} must be >= than 0".format(name))
+                raise ValueError("{:s} must be > than 0".format(name))
         # May need this code below
         # elif name == "id":
         #     if value < 1:
