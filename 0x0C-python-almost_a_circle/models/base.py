@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Base class"""
-
 import json
 import csv
+
 
 class Base:
     """This defines the base class"""
@@ -48,7 +48,7 @@ class Base:
         if type(list_rectangles) is list and len(list_rectangles) > 0:
             for rectangle in list_rectangles:
                 rectangle = rectangle.to_dictionary()
-                t.setpos(rectangle["x"], ["y"])
+                t.setpos(rectangle["x"], rectangle["y"])
                 t.pendown()
                 t.forward(rectangle["width"])
                 t.right(90)
@@ -58,11 +58,10 @@ class Base:
                 t.right(90)
                 t.forward(rectangle["height"])
                 t.penup()
-
         elif type(list_squares) is list and len(list_squares) > 0:
-             for square in list_squares:
+            for square in list_squares:
                 square = square.to_dictionary()
-                t.setpos(square["x"], ["y"])
+                t.setpos(square["x"], rectangle["y"])
                 t.pendown()
                 t.forward(square["size"])
                 t.right(90)
@@ -88,7 +87,7 @@ class Base:
     def load_from_file_csv(cls):
         """deserializes from CSV"""
         with open("{}.csv".format(cls.__name__)) as f:
-            data =  csv.reader(f)
+            data = csv.reader(f)
         data = cls.from_json_string(data)
         lis = []
         for i in data:
@@ -101,7 +100,7 @@ class Base:
     def load_from_file(cls):
         """returns a list of instances"""
         with open("{}.json".format(cls.__name__)) as f:
-            data =  f.read()
+            data = f.read()
         data = cls.from_json_string(data)
         lis = []
         for i in data:
@@ -164,4 +163,3 @@ class Base:
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         return json.dumps(list_dictionaries)
-
