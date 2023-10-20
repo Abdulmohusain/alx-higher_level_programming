@@ -18,13 +18,14 @@ class TestSquare10(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             s1 = Square(-2, 4)
+            s1 = Square(0)
 
         # Test for instanca attributes and their getter
         # Test for setters is found below
         s1 = Square(2)
         self.assertEqual(str(s1), "[Square] (13) 0/0 - 2")
         self.assertEqual(s1.area(), 4)
-        
+
         # self.assertStdout(str(s1.display()), "##\n##")
 
         # Getters and setters
