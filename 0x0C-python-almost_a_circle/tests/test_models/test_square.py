@@ -24,10 +24,12 @@ class TestSquare10(unittest.TestCase):
         s1 = Square(2)
         self.assertEqual(str(s1), "[Square] (13) 0/0 - 2")
         self.assertEqual(s1.area(), 4)
+        
         # self.assertStdout(str(s1.display()), "##\n##")
 
         # Getters and setters
         self.assertEqual(s1.size, 2)
+        self.assertEqual(s1.area(), 4)
         s1.size = 3
         self.assertEqual(s1.size, 3)
 
@@ -38,6 +40,7 @@ class TestSquare10(unittest.TestCase):
         self.assertEqual(s1.y, 0)
         s1.y = 4
         self.assertEqual(s1.y, 4)
+        self.assertEqual(s1.area(), 9)
 
         s2 = Square(4, 2)
         self.assertEqual(str(s2), "[Square] (14) 2/0 - 4")
@@ -45,6 +48,7 @@ class TestSquare10(unittest.TestCase):
         self.assertEqual(s2.x, 2)
         self.assertEqual(s2.y, 0)
         self.assertEqual(s2.id, 14)
+        self.assertEqual(s2.area(), 16)
 
         s3 = Square(4, 2, 3)
         self.assertEqual(str(s3), "[Square] (15) 2/3 - 4")
