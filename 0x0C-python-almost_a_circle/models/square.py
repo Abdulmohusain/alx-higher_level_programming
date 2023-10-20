@@ -10,6 +10,7 @@ class Square(Rectangle):
     """
     def __init__(self, size, x=0, y=0, id=None):
         """"init method"""
+        self.integer_validator("size", size)
         super().__init__(size, size, x, y, id)
 
     def to_dictionary(self):
