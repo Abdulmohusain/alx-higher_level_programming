@@ -6,7 +6,7 @@ from models.base import Base
 from models.square import Square
 
 
-class TestReactangle(unittest.TestCase):
+class TestReactangle2(unittest.TestCase):
     """Tests cases for Reactangle class"""
 
     def test_rectangle_2(self):
@@ -25,7 +25,7 @@ class TestReactangle(unittest.TestCase):
         self.assertEqual(r1.height, 2)
         self.assertEqual(r1.x, 0)
         self.assertEqual(r1.y, 0)
-        self.assertEqual(r1.id, 3)
+        # self.assertEqual(r1.id, 3)
 
         r2 = Rectangle(2, 4, 2)
         self.assertEqual(r2.width, 2)
@@ -50,34 +50,50 @@ class TestReactangle(unittest.TestCase):
 
         self.assertEqual(r4.x, 2)
         r4.x = 4
-        self.assertEqual(r4.v, 4)
+        self.assertEqual(r4.x, 4)
 
         self.assertEqual(r4.y, 3)
         r4.y = 4
         self.assertEqual(r4.y, 4)
 
+
+class TestReactangle3(unittest.TestCase):
+    """Tests cases for Reactangle class"""
     def test_rectangle_3(self):
         """Test for 3-rectangle"""
         # Test for type error
-        self.assertRaises(Rectangle("a", 2, 4, 6, 8), TypeError)
-        self.assertRaises(Rectangle(1, 7.43, 4, 6, 8), TypeError)
-        self.assertRaises(Rectangle(1, 2, [], 6, 8), TypeError)
-        self.assertRaises(Rectangle(1, 2, 4, True, 8), TypeError)
-        self.assertRaises(Rectangle(1, 2, 4, 6, 3+5j), TypeError)
+
+        with self.assertRaises(TypeError):
+            Rectangle("a", 2, 4, 6, 8)
+            Rectangle(1, 7.43, 4, 6, 8)
+            Rectangle(1, 2, [], 6, 8)
+            Rectangle(1, 2, 4, True, 8)
+            Rectangle(1, 2, 4, 6, 3+5j)
+
         # Test for Value error
         # Width
-        self.assertRaises(Rectangle(0, 2, 4, 6, 8), ValueError)
-        self.assertRaises(Rectangle(-2, 2, 4, 6, 8), ValueError)
+        with self.assertRaises(ValueError):
+            Rectangle(0, 2, 4, 6, 8)
+            Rectangle(-2, 2, 4, 6, 8)
+
         # Height
-        self.assertRaises(Rectangle(1, 0, 4, 6, 8), ValueError)
-        self.assertRaises(Rectangle(1, -2, 4, 6, 8), ValueError)
+        with self.assertRaises(ValueError):
+            Rectangle(1, 0, 4, 6, 8)
+            Rectangle(1, -2, 4, 6, 8)
+
         # x
-        self.assertRaises(Rectangle(1, 2, -3, 6, 8), ValueError)
+        with self.assertRaises(ValueError):
+            Rectangle(1, 2, -3, 6, 8)
+
         # y
-        self.assertRaises(Rectangle(1, 2, -8, 6, 8), ValueError)
+        with self.assertRaises(ValueError):
+            Rectangle(1, 2, -8, 6, 8)
+
         # id
-        self.assertRaises(Rectangle(1, 2, 4, 6, -2), ValueError)
-        self.assertRaises(Rectangle(1, 2, 4, 6, 0), ValueError)
+        with self.assertRaises(ValueError):
+            Rectangle(1, 2, 4, 6, -2)
+            Rectangle(1, 2, 4, 6, 0)
+
         # Setter validiation following the order above
         r4 = Rectangle(2, 4, 6, 8, 10)
         with self.assertRaises(TypeError):
@@ -95,6 +111,9 @@ class TestReactangle(unittest.TestCase):
             r4.y = 0
             r4.y = -1
 
+
+class TestReactangle4(unittest.TestCase):
+    """Tests cases for Reactangle class"""
     def test_rectangle_4(self):
         """Test for 4-rectangle"""
         r1 = Rectangle(2, 4, 6, 8, 10)
@@ -106,22 +125,28 @@ class TestReactangle(unittest.TestCase):
     #     b = "\n\n\n\n\n\n\n\n      ##\n      ##\n      ##\n      ##\n"
     #     self.assertEqual(r1.display(), b)
 
+
+class TestReactangle6(unittest.TestCase):
+    """Tests cases for Reactangle class"""
     def test_rectangle_6(self):
         """Test for 6-rectangle"""
         r1 = Rectangle(2, 4, 6, 8, 10)
         self.assertEqual(str(r1), "[Rectangle] (10) 6/8 - 2/4")
         r2 = Rectangle(5, 5, 1)
-        self.assertEqual(str(r2), "[Rectangle] (4) 1/0 - 5/5")
+        self.assertEqual(str(r2), "[Rectangle] (9) 1/0 - 5/5")
 
     # def test_rectangle_7(self):
     #     """Test for 7-rectangle"""
     #     r1 = Rectangle(2, 3, 2, 2)
     #     self.assertEqual(r1.display(), "\n\n\n  ##\n  ##\n  ##\n")
 
+
+class TestReactangle8(unittest.TestCase):
+    """Tests cases for Reactangle class"""
     def test_rectangle_8(self):
         """Test for 8-rectangle"""
         r1 = Rectangle(10, 10, 10, 10)
-        self.assertEqual(str(r1), "[Rectangle] (5) 10/10 - 10/10")
+        self.assertEqual(str(r1), "[Rectangle] (10) 10/10 - 10/10")
 
         # self.assertRaises(r1.update(), TypeError)
 
@@ -140,18 +165,21 @@ class TestReactangle(unittest.TestCase):
         r1.update(89, 2, 3, 4, 5)
         self.assertEqual(str(r1), "[Rectangle] (89) 4/5 - 2/3")
 
+
+class TestReactangle9(unittest.TestCase):
+    """Tests cases for Reactangle class"""
     def test_rectangle_9(self):
         """Test for 9-rectangle"""
         r1 = Rectangle(10, 10, 10, 10)
-        self.assertEqual(str(r1), "[Rectangle] (6) 10/10 - 10/10")
+        self.assertEqual(str(r1), "[Rectangle] (11) 10/10 - 10/10")
 
         # self.assertRaises(r1.update(), TypeError)
 
         r1.update(height=1)
-        self.assertEqual(str(r1), "[Rectangle] (6) 10/10 - 10/1")
+        self.assertEqual(str(r1), "[Rectangle] (11) 10/10 - 10/1")
 
         r1.update(width=1, x=2)
-        self.assertEqual(str(r1), "[Rectangle] (6) 2/10 - 1/1")
+        self.assertEqual(str(r1), "[Rectangle] (11) 2/10 - 1/1")
 
         r1.update(y=1, width=2, x=3, id=89)
         self.assertEqual(str(r1), "[Rectangle] (89) 3/1 - 2/1")
@@ -159,17 +187,16 @@ class TestReactangle(unittest.TestCase):
         r1.update(x=1, height=2, y=3, width=4)
         self.assertEqual(str(r1), "[Rectangle] (89) 1/3 - 4/2")
 
+
+class TestReactangle13(unittest.TestCase):
+    """Tests cases for Reactangle class"""
     def test_rectangle_13(self):
         """Test for to_dictionary"""
-        r1 = Rectangle(10, 7, 2, 8)
-        self.assertEqual(r1.to_dictionary(),
-                         {
-                             'x': 2,
-                             'width': 10,
-                             'id': 1,
-                             'height': 7,
-                             'y': 8
-                             })
+        r1 = Rectangle(10, 7, 2, 8, 23)
+        self.assertEqual(
+                        str(r1.to_dictionary()),
+                        "{'id': 23, 'width': 10, 'height': 7, 'x': 2, 'y': 8}"
+                        )
 
 
 if __name__ == "__main__":

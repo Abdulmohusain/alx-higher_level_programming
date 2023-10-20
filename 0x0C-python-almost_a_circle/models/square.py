@@ -29,24 +29,26 @@ class Square(Rectangle):
         4th argument should be the x attribute
         5th argument should be the y attribute
         """
-        for key, value in kwargs.items():
-            if key == "id":
-                self.id = value
-            elif key == "size":
-                self.size = value
-            elif key == "x":
-                self.x = value
-            elif key == "y":
-                self.y = value
-        for n, arg in enumerate(args):
-            if n == 0:
-                self.id = arg
-            elif n == 1:
-                self.size = arg
-            elif n == 3:
-                self.x = arg
-            elif n == 4:
-                self.y = arg
+        if kwargs:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                elif key == "size":
+                    self.size = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
+        if args:
+            for n, arg in enumerate(args):
+                if n == 0:
+                    self.id = arg
+                elif n == 1:
+                    self.size = arg
+                elif n == 2:
+                    self.x = arg
+                elif n == 3:
+                    self.y = arg
 
     @property
     def size(self):
