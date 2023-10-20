@@ -10,6 +10,7 @@ class Square(Rectangle):
     """
     def __init__(self, size, x=0, y=0, id=None):
         """"init method"""
+        self.integer_validator("size", size)
         super().__init__(size, size, x, y, id)
 
     def to_dictionary(self):
@@ -58,7 +59,6 @@ class Square(Rectangle):
     @size.setter
     def size(self, value):
         """size setter"""
-        self.integer_validator("size", value)
         self.width = value
         self.height = value
 
@@ -69,4 +69,5 @@ class Square(Rectangle):
                                                 self.x,
                                                 self.y,
                                                 self.width,
+                                                self.height
                                                 )
