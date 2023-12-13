@@ -7,6 +7,6 @@ if (argv[2] === undefined) {
   if (isNaN(argv[2])) {
     console.log('Not a number');
   } else {
-    console.log(num);
+    console.log('My number: ' + num);
   }
 }
