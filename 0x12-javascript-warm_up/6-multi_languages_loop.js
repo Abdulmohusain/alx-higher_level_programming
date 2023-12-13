@@ -11,6 +11,6 @@ for (let i = 0; i < 3; i++) {
       console.log('JavaScript is amazing');
       break;
     default:
-      continue;
+      break;
   }
 }
