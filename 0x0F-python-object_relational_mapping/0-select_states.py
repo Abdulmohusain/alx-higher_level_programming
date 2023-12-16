@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Module contains MySQL"""
 import MySQLdb
 import sys
 
