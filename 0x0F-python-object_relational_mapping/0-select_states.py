@@ -20,7 +20,7 @@ if __name__ == '__main__':
             cur.execute("SELECT * FROM states;")
             rows = cur.fetchall()
         except MySQLdb.Error as e:
-                print("MySQL Error {}: ".format(e))
-                
+            print("MySQL Error {}: ".format(e))
+
         for row in rows:
             print(row)
