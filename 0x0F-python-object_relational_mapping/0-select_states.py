@@ -3,7 +3,7 @@
 import MySQLdb
 import sys
 
-if __name__ == '__main__':
+def main():
     """Main"""
     if len(sys.argv) == 4:
         db = MySQLdb.connect(
@@ -15,12 +15,12 @@ if __name__ == '__main__':
             )
 
         cur = db.cursor()
-        try:
-            cur.execute("USE hbtn_0e_0_usa;")
-            cur.execute("SELECT * FROM states;")
-            rows = cur.fetchall()
-        except MySQLdb.Error as e:
-            print("MySQL Error {}: ".format(e))
+        cur.execute("USE hbtn_0e_0_usa;")
+        cur.execute("SELECT * FROM states;")
+        rows = cur.fetchall()
 
         for row in rows:
             print(row)
+
+if __name__ == '__main__':
+    main()
