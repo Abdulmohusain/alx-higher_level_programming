@@ -15,7 +15,7 @@ def main():
         )
 
     cur = db.cursor()
-    cur.execute("SELECT * FROM cities ORDER BY cities.id ASC;")
+    cur.execute("SELECT * FROM cities states ORDER BY cities.id ASC;")
     rows = cur.fetchall()
     for row in rows:
         print(row)
