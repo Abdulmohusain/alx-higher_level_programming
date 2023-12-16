@@ -16,11 +16,12 @@ def main():
 
     cur = db.cursor()
     cur.execute("USE hbtn_0e_0_usa;")
-    cur.execute("SELECT * FROM states ORDER BY id;")
+    cur.execute("SELECT * FROM states ORDER BY states.id ASC;")
     rows = cur.fetchall()
     for row in rows:
         print(row)
 
 
 if __name__ == '__main__':
+    """Main"""
     main()
