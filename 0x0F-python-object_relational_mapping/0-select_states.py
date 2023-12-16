@@ -3,6 +3,7 @@
 import MySQLdb
 import sys
 
+
 def main():
     """Main"""
     if len(sys.argv) == 4:
@@ -21,6 +22,7 @@ def main():
 
         for row in rows:
             print(row)
+
 
 if __name__ == '__main__':
     main()
