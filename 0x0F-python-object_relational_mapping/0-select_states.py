@@ -17,9 +17,8 @@ def main():
 
         cur = db.cursor()
         cur.execute("USE hbtn_0e_0_usa;")
-        cur.execute("SELECT * FROM states;")
+        cur.execute("SELECT * FROM states ORDER BY id;")
         rows = cur.fetchall()
-
         for row in rows:
             print(row)
 
