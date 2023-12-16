@@ -10,12 +10,17 @@ if __name__ == '__main__':
             host='localhost',
             port=3306,
             user=sys.argv[1],
-            password=sys.argv[2],
+            password='qwerty',
             database=sys.argv[3]
             )
 
         cur = db.cursor()
-        cur.execute("USE hbtn_0e_0_usa;")
-        cur.execute("SELECT * FROM states;")
-        for state in cur.fetchall():
-            print(state)
+        try:
+            cur.execute("USE hbtn_0e_0_usa;")
+            cur.execute("SELECT * FROM states;")
+            rows = cur.fetchall()
+        except MySQLdb.Error as e:
+                print("MySQL Error {}: ".format(e))
+                
+        for row in rows:
+            print(row)
