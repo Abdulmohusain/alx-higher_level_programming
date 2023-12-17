@@ -22,11 +22,8 @@ def main():
     Session = sessionmaker(bind=engine)
     session = Session()
     states = session.query(State).filter(State.name == '{}'.format(name)).all()
-    if states is not None:
-        for state in states:
-            print(state.id)
-    else:
-        print("Nothing")
+    for state in states:
+        print(state.id)
     session.close()
 
 
