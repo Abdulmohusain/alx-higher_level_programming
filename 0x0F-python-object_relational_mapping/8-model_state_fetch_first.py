@@ -17,9 +17,9 @@ def main():
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    row = session.query(State).first()
-    if row is not None:
-        print("{}: {}".format(row.id, row.name))
+    row = session.query(State).order_by(State.id).first()
+    # if row is not None:
+    #     print("{}: {}".format(row.id, row.name))
 
 
 if __name__ == '__main__':
