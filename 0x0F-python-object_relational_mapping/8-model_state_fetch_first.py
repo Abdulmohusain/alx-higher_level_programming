@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module contains """
+"""Module contains main"""
 from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -18,7 +18,8 @@ def main():
     Session = sessionmaker(bind=engine)
     session = Session()
     row = session.query(State).first()
-    print("{}: {}".format(row.id, row.name))
+    if row is not None:
+        print("{}: {}".format(row.id, row.name))
 
 
 if __name__ == '__main__':
