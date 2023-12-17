@@ -9,7 +9,7 @@ import sys
 
 def main():
     """Main"""
-    database_url = "mysql://{}:{}@localhost:3306/{}".format(
+    database_url = "mysql://{}:{}@localhost/{}".format(
         sys.argv[1],
         sys.argv[2],
         sys.argv[3]
