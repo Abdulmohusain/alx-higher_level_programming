@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 """Module contains """
 from model_state import Base, State
-from sqlalchemy import create_engine, text
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-
 import sys
 
 
