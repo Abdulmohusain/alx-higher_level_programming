@@ -15,7 +15,13 @@ def main():
         )
 
     cur = db.cursor()
-    cur.execute("SELECT * FROM cities states ORDER BY cities.id ASC;")
+    cur.execute(
+        "SELECT cities.id AS city_id, cities.name AS city, "
+        "states.name AS state "
+        "FROM cities "
+        "JOIN states ON cities.state_id = states.id "
+        "ORDER BY cities.id ASC;"
+        )
     rows = cur.fetchall()
     for row in rows:
         print(row)
