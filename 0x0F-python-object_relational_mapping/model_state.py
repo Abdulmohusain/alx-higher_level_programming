@@ -19,7 +19,7 @@ class State(Base):
 
     def __repr__(self):
         """Nicely printable reprisentation of the object"""
-        return "<User(id='{}', name='{}')>".format(
+        return "{}: {}".format(
             self.id,
             self.name
             )
