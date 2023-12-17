@@ -27,8 +27,11 @@ def main():
         "ORDER BY cities.id ASC;".format(name)
         )
     rows = cur.fetchall()
-    for row in rows:
-        print(row)
+    for num, row in enumerate(rows):
+        print(row[0], end='')
+        if num != len(rows) - 1:
+            print(', ', end='')
+    print()
 
 
 if __name__ == '__main__':
