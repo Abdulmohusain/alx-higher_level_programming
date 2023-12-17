@@ -15,9 +15,10 @@ def main():
         sys.argv[3]
         )
     engine = create_engine(database_url)
+    Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    row = session.query(State).filter_by(id=1).first()
+    row = session.query(State).first()
     print("{}: {}".format(row.id, row.name))
 
 
