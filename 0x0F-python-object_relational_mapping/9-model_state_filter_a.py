@@ -17,7 +17,7 @@ def main():
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    row = session.query(State).filter(State.name.like('%A%')).all()
+    row = session.query(State).filter(State.name.like('%a%')).all()
     if row is not None:
         print("{}: {}".format(row.id, row.name))
     else:
