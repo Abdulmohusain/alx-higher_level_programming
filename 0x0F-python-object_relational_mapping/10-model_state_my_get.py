@@ -21,9 +21,12 @@ def main():
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    states = session.query(State).filter(State.name == name).all()
-    for state in states:
-        print(state.id)
+    states = session.query(State).filter(State.name == '{}'.format(name)).all()
+    if states is not None:
+        for state in states:
+            print(state.id)
+    else:
+        print("Not found")
     session.close()
 
 
