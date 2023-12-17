@@ -13,7 +13,7 @@ def main():
         sys.argv[2],
         sys.argv[3]
         )
-    engine = create_engine(database_url)
+    engine = create_engine(database_url, pool_pre_ping=True)
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
