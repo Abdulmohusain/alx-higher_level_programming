@@ -17,9 +17,10 @@ def main():
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    row = session.query(State).filter(State.name.like('%a%')).all()
-    if row is not None:
-        print("{}: {}".format(row.id, row.name))
+    states = session.query(State).filter(State.name.like('%a%')).all()
+    if states is not None:
+        for state in states:
+            print("{}: {}".format(state.id, state.name))
     else:
         print("Nothing")
     session.close()
