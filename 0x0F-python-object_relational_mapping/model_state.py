@@ -16,3 +16,10 @@ class State(Base):
     __tablename__ = 'states'
     id = Column(Integer, primary_key=True)
     name = Column(String(128))
+
+    def __repr__(self):
+        """Nicely printable reprisentation of the object"""
+        return "<User(id='{}', name='{}')>".format(
+            self.id,
+            self.name
+            )
