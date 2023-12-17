@@ -23,10 +23,11 @@ def main():
     session = Session()
     states = session.query(State).filter(State.name == '{}'.format(name)).all()
     if states is not None:
-        for state in states:
-            print(state.id)
-    else:
-        print("Not found")
+        if len(states) > 0:
+            for state in states:
+                print(state.id)
+        else:
+            print("Not found")
     session.close()
 
 
