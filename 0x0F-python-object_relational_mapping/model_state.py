@@ -17,9 +17,9 @@ class State(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String(128))
 
-    def __repr__(self):
-        """Nicely printable reprisentation of the object"""
-        return "{}: {}".format(
-            self.id,
-            self.name
-            )
+    # def __repr__(self):
+    #     """Nicely printable reprisentation of the object"""
+    #     return "{}: {}".format(
+    #         self.id,
+    #         self.name
+    #         )

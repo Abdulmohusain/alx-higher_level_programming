@@ -9,7 +9,7 @@ import sys
 
 def main():
     """Main"""
-    database_url = "mysql://{}:{}@localhost/{}".format(
+    database_url = "mysql://{}:{}@localhost:3306/{}".format(
         sys.argv[1],
         sys.argv[2],
         sys.argv[3]
@@ -17,8 +17,8 @@ def main():
     engine = create_engine(database_url)
     Session = sessionmaker(bind=engine)
     session = Session()
-    row = session.query(State).first()
-    print(row)
+    row = session.query(State).filter_by(id=1).first()
+    print("{}: {}".format(row.id, row.name))
 
 
 if __name__ == '__main__':
