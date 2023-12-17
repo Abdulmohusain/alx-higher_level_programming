@@ -21,7 +21,7 @@ def main():
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    states = session.query(State).filter(State.name == '{}'.format(name)).all()
+    states = session.query(State).filter(State.name == name).all()
     for state in states:
         print(state.id)
     session.close()
