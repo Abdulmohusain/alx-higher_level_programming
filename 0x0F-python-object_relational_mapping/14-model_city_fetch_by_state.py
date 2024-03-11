@@ -18,7 +18,7 @@ def main():
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    rows = session.query(City).join(State).all()
+    rows = session.query(City).filter("City.id").all()
     for cities, states in rows:
         print("{}: {} {}".format(states.name, cities.id, cities.name))
 
