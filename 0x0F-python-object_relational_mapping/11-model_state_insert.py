@@ -20,7 +20,6 @@ def main():
     louisiana = State(name='Louisiana')
     session.add(louisiana)
     session.commit()
-    print(louisiana.id)
     session.close()
 
 
