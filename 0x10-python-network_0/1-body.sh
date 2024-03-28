@@ -1,2 +1,2 @@
-#!/usr/bin/env bash
-curl -X "GET" "$1"
+#!/usr/bin/bash
+curl -s -X "GET" "$1" 
