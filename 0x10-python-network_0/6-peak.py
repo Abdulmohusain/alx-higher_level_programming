@@ -5,5 +5,11 @@
 def find_peak(list_of_integers):
     """"List of integers"""
     if list_of_integers:
-        peak = sorted(list_of_integers, reverse=True)[0]
+        peak = None
+        for i in list_of_integers:
+            if peak == None:
+                peak = i
+            if i > peak:
+                peak = i
         return peak
+
