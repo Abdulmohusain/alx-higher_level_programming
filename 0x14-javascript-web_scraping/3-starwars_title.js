@@ -10,5 +10,5 @@ request(options, function (error, response, body) {
   if (error) {
     console.log(error);
   }
-  console.log('Response Body:', body.title);
+  console.log(body.title);
 });
