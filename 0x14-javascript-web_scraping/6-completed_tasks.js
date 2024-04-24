@@ -57,8 +57,6 @@ request(options, function (error, response, body) {
         case 10:
           result['10']++;
           break;
-        default:
-          console.log('Something went wrong in the switch');
       }
     }
   }
